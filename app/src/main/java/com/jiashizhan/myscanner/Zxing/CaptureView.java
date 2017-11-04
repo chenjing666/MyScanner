@@ -16,6 +16,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import com.google.zxing.Result;
 import com.jiashizhan.myscanner.Zxing.camera.CameraManager;
@@ -248,8 +249,20 @@ public class CaptureView extends FrameLayout implements Callback {
 //        removePreView();
 //        initCaptureView(moduleContext);
         initParams("fs://barImage/hh.jpg", 400, 400, "fs://barImage/hh.jpg", true);
+        captureViewLayout();
 //        insertCaptureView(moduleContext);
 //        mCaptureView.onResume();
+    }
+
+    private RelativeLayout.LayoutParams captureViewLayout() {
+        int x = 200;
+        int y = 200;
+        int width = 400;
+        int height = 400;
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                width, height);
+        params.setMargins(x, y, 0, 0);
+        return params;
     }
 
 
